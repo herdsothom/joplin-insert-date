@@ -7,6 +7,6 @@
 	"description": "Adds a button to insert the current date (without time) into the editor.",
 	"author": "herdsothom",
 	"homepage_url": "https://github.com/herdsothom/joplin-insert-date",
-	"repository_url": "https://github.com/herdsothom/joplin-insert-date",
+	"repository_url": "https://discourse.joplinapp.org/t/plugin-insert-date/14902",
 	"keywords": []
 }

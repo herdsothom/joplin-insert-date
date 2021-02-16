@@ -9,8 +9,6 @@ function formatMsToLocal(ms: number) {
 joplin.plugins.register({
 	onStart: async function() {
 
-		
-
 		await joplin.commands.register({
 			name: 'insertDate',
 			label: 'Insert Date',
