@@ -1,13 +1,15 @@
 import joplin from 'api';
 import { ToolbarButtonLocation } from 'api/types';
-const moment = require('moment');
-
-function formatMsToLocal(ms: number) {
-	return moment(ms).format('DD/MM/YYYY');
-}
+import * as moment from 'moment';
 
 joplin.plugins.register({
 	onStart: async function() {
+		
+		var dateFormat = await joplin.settings.globalValue('dateFormat');
+
+		const formatMsToLocal = (ms: number) => {
+			return moment(ms).format(dateFormat);
+		}
 
 		await joplin.commands.register({
 			name: 'insertDate',
@@ -21,4 +23,5 @@ joplin.plugins.register({
 
 		await joplin.views.toolbarButtons.create('insertDate', 'insertDate', ToolbarButtonLocation.EditorToolbar);
 	},
+
 });
